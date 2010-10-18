@@ -1,5 +1,5 @@
 rails -v 2.3.8
-rack/openid -v 1.2.0 -s gems.github.com
+rack-openid -v 1.2.0 -s gems.github.com
 faraday -v 0.4.6
 faraday_middleware -v 0.0.5
 acts-as-taggable-on -v 2.0.6
