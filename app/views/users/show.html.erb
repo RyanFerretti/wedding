@@ -1,0 +1,30 @@
+<% content_for :content_class, 'table-wrap' %>
+<% content_for :body_class, 'has-sidebar' %>
+<div class="post-wrap self-clear content-bg">
+  <div class="post-wrap-inner">
+    <div class='post-header normal'>
+      <h4>Your Profile</h4>
+      <br/>
+      <p>
+        <b>First Name:</b>
+        <%= @user.first_name %>
+      </p>
+      <p>
+        <b>Last Name:</b>
+        <%= @user.last_name %>
+      </p>
+      <p>
+        <b>Email:</b>
+        <%= @user.email %>
+      </p>
+      <p>
+        <b>Username:</b>
+        <%= @user.username %>
+        <% if @user.identity_url %>
+            &nbsp;( you don't need a username because you logged in using OpenId )
+        <% end %>
+      </p>
+      <%= link_to 'Edit', edit_user_path(@user) %>
+    </div>
+  </div>
+</div>

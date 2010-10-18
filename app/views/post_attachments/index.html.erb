@@ -1,0 +1,30 @@
+<% div_for @post, :class => 'post hentry category-engagements self-clear' do %>
+    <div class="post-wrap self-clear content-bg">
+      <div class="edit_back_links">
+        <%= link_to 'Back', :back %>
+      </div>
+      <div class="post-wrap-inner">
+		<div class='post-header normal'>
+          <div class='post-title-wrap'>
+            <h2 class='entry-title'>Attachments</h2>
+	      </div>
+          <div>
+            <% @post.in_groups_of(10).each do |key,grouping| %>
+              <div class="p3-lightbox-gallery-thumbs" style='width:895px;'>
+                <% grouping.each_with_index do |attachment,index| %>
+                  <%= render :partial => 'post_attachments/post_attachment', 
+                                :locals => {:post_attachment => attachment,
+                                :size => :small,
+                                :img_class => ((grouping.count-1) == index)} %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <br/><br/>
+          <div class="entry-content self-clear">
+            <%= render :partial => 'post_attachments/form', :locals => {:post => @post} %>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>

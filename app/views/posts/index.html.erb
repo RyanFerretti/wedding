@@ -1,0 +1,5 @@
+<% if can? :create, Post %>
+    <%= link_to 'New post', new_post_path %>
+<% end %>
+
+<%= render :partial => @posts %>

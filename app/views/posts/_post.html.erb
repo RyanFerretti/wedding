@@ -1,0 +1,101 @@
+<% div_for post, :class => 'post hentry category-engagements self-clear' do %>
+    <div class="post-wrap self-clear content-bg">
+      <div class="edit_back_links">  
+        <%= edit_and_back_links(post) %>
+      </div>
+      <div class="post-wrap-inner">
+		<div class='post-header normal'>
+          <div class='post-title-wrap'>
+            <h2 class='entry-title'>
+              <%= link_to_unless_current h(post.title), post %>
+		    </h2>
+	      </div>
+          <div class='entry-meta entry-meta-top'>
+			<span class="post-date postmeta"><span><%= h post.created_at.to_s %></span></span><span class="post-categories postmeta">Posted in <a href="#"><%= build_tags_links(post) %></a> by <a href="#"><%= post.user.username.titleize %></a></span><span id="post_header_comment_count_<%= h post.id %>" class="post-header-comment-count postmeta"><%= h pluralize(post.comments.size,"comment") %></span>
+		  </div>
+	    </div>
+        <div class="entry-content self-clear">
+          <%= post.body %>
+          <% if post.picture_type? && !post.post_attachments.empty? %>
+            <p>
+              <div class="p3-lightbox-gallery">
+                <%= render :partial => 'post_attachments/post_attachment',
+                                :locals => {:post_attachment => post.post_attachments.first,
+                                :size => :large,
+                                :img_class => false} %>
+
+                <% post.all_but_first_attachment_in_groups_of(10).each do |key,grouping| %>
+                  <div class="p3-lightbox-gallery-thumbs" style='width:895px;'>
+                    <% grouping.each_with_index do |attachment,index| %>
+                      <%= render :partial => 'post_attachments/post_attachment',
+                                :locals => {:post_attachment => attachment,
+                                :size => :small,
+                                :img_class => ((grouping.count-1) == index)} %>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
+            </p>
+          <% end %>
+		</div>
+      </div>
+      <!-- End Post -->
+      <div id="entry-comments-<%= h post.id %>" class="entry-comments accepting-comments">
+        <div class="comments-header self-clear">
+          <div class="comments-header-left-side-wrap self-clear">
+            <div class="comments-count" id="comments-count-<%= h post.id %>" style="cursor:pointer;">
+              <div>
+                <p id="post_comments_count_<%= h post.id %>"><%= h pluralize(post.comments.size,"comment") %></p>
+                <div id='show-hide-button'></div>
+              </div>
+            </div>
+          </div>
+          <div class="post-interact">
+            <div class="addacomment post-interact-div">
+              <div class="button-outer">
+                <div class="button-inner">
+                  <a id="addcom_<%= h post.id %>" class="pi-link" href="#">add a comment</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Comments Header -->
+        <div id="comments-body-<%= h post.id %>" class="comments-body" style="display:none;">
+          <div class="comments-body-inner-wrap">
+            <div id="comments_body_inner" class="comments-body-inner">
+              <%= render :partial => post.comments %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Comments -->
+      <div id="addcomment-holder-<%= h post.id %>" class="addcomment-holder" style="display:none">
+        <div class="formcontainer" id="addcomment">
+          <% form_for [post, Comment.new], :html => {:id => "new_comment_#{h(post.id)}",:class => "new_commnet_form"} do |f| %>
+            <div class="cmt-name">
+              <p>
+                <%= f.label :author, "Name" %><span class="required">*</span>
+              </p>
+            </div>
+            <div class="cmt-name">
+                <input id="author" name="author" value="" size="40" maxlength="60" tabindex="3" type="text">
+            </div>
+            <div id="addcomment-error"><span>There was an error submitting your comment.  Please try again.</span></div>
+            <div class="cmt-comment">
+              <p><%= f.label :body, "Comment" %></p>
+            </div>
+            <div class="cmt-comment">
+              <%= f.text_area :body, :cols => 65, :rows => 12 %>
+            </div>
+            <div class="cmt-submit">
+              <%= f.submit "Post Comment" %>
+              <input id="cancel_add_comment_<%= h post.id %>" class="cancel-reply" value="Cancel" type="button">
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <!-- End Add Comment -->
+      <div class="post-footer"></div>
+    </div>
+<% end %>

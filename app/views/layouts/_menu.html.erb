@@ -1,0 +1,25 @@
+<div id="topnav-wrap" class="self-clear">
+  <ul id="topnav" class="self-clear">
+    <li id="navlink_home">
+        <%= link_to_unless_current "Home", {:controller => 'welcome', :action => 'index'} do |name| current_active_link(name) end %>
+    </li>
+    <li id="navlink_portfolio">
+        <%= link_to_unless_current "Blog", {:controller => 'posts', :action => 'index'} do |name| current_active_link(name) end %>
+    </li>
+    <li id="navlink_galleries">
+      <%= link_to_unless_current "The Day", the_day_path do |name| current_active_link(name) end %>
+    </li>
+    <li id='navlink_archives'>
+      <%= link_to_unless_current "Wedding Party", wedding_party_path do |name| current_active_link(name) end %>
+    </li>
+    <li class="categories">
+      <a>RSVP</a>
+    </li>
+    <li id="navlink_contact">
+      <%= link_to_unless_current "Visualize", visualize_path do |name| current_active_link(name) end %>
+    </li>
+    <li id="nav-rss">
+      <%= mail_to "ryanferretti@gmail.com", "Contact", :encode => "hex", :subject => "About Your Wedding...", :body => "I would like to volunteer to pay for your wedding!"%>
+    </li>
+  </ul>
+</div>

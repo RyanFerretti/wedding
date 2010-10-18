@@ -1,0 +1,4 @@
+$("#post_header_comment_count_<%= @post.id %>").html("<%= pluralize(@post.comments.count, 'comment') %>");
+$("#post_comments_count_<%= @post.id %>").html("<%= pluralize(@post.comments.count, 'comment') %>");
+$("#comments_body_inner").append("<%= escape_javascript(render(:partial => @comment)) %>");
+$("#new_comment_<%= h @post.id %>")[0].reset();

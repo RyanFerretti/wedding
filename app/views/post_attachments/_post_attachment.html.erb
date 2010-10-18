@@ -1,0 +1,11 @@
+<% if img_class %>
+<span class="last">
+  <a class="lightbox_links" href='<%= post_attachment.photo.url(:original) %>'>
+    <%= image_tag post_attachment.photo.url(size) %>
+  </a>
+</span>
+<% else %>
+  <a class="lightbox_links" href='<%= post_attachment.photo.url(:original) %>'>
+    <%= image_tag post_attachment.photo.url(size) %>
+  </a>
+<% end %>

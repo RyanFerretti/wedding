@@ -1,0 +1,48 @@
+<div id="drawer_1" class="drawer">
+    <div id="tab_1" class="tab">
+	    <span>T</span>
+        <span>w</span>
+        <span>i</span>
+        <span>t</span>
+        <span>t</span>
+        <span>e</span>
+        <span>r</span>
+	</div>
+    <ul id="drawer_content_1" class="drawer_content">
+        <li id="p3-twitter-com-widget-3" class="widget widget_p3-twitter-com-widget">
+            <div>
+              <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+              <script>
+                new TWTR.Widget({
+                  version: 2,
+                  type: 'profile',
+                  rpp: 10,
+                  interval: 6000,
+                  width: 250,
+                  height: 300,
+                  theme: {
+                    shell: {
+                      background: '#333333',
+                      color: '#ffffff'
+                    },
+                    tweets: {
+                      background: '#ffffff',
+                      color: '#000000',
+                      links: '#07bdeb'
+                    }
+                  },
+                  features: {
+                    scrollbar: true,
+                    loop: false,
+                    live: true,
+                    hashtags: true,
+                    timestamp: true,
+                    avatars: true,
+                    behavior: 'all'
+                  }
+                }).render().setUser('Julie_and_Ryan').start();
+              </script>
+            </div>
+        </li>
+    </ul>
+</div>

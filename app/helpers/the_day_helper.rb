@@ -1,0 +1,2 @@
+module TheDayHelper
+end

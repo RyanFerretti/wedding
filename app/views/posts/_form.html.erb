@@ -1,0 +1,39 @@
+<% content_for :head, javascript_include_tag("/javascripts/jwysiwyg/jquery.wysiwyg.js") %>
+<% content_for :head, stylesheet_link_tag("/javascripts/jwysiwyg/jquery.wysiwyg.css") %>
+<% div_for post, :class => 'post hentry category-engagements self-clear' do %>
+    <div class="post-wrap self-clear content-bg">
+      <div class="edit_back_links">
+        <%= show_and_back_links(post) %>
+      </div>
+      <div class="post-wrap-inner">
+		<div class='post-header normal'>
+          <div class='post-title-wrap'>
+            <h2 class='entry-title'><%= h display_title %></h2>
+	      </div>
+          <div class="entry-content self-clear">
+            <% form_for(post) do |f| %>
+              <%= f.error_messages %>
+              <p>
+                <%= f.label :title %><br />
+                <%= f.text_field :title %>
+              </p>
+              <p>
+                <%= f.label :post_type %><br />
+                <%= f.select(:post_type, %w(Normal Picture), :prompt=>'- Please Select -', :selected=> post.post_type) %>
+              </p>
+              <p>
+                <%= link_to pluralize(post.post_attachments.count,'Attachment'), post_post_attachments_path(post) %>
+              </p>
+              <p>
+                <%= f.label :body %><br />
+                <%= f.text_area :body ,:cols => 100, :class => "richTextArea" %>
+              </p>
+              <p>
+                <%= f.submit 'Save' %>
+              </p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>

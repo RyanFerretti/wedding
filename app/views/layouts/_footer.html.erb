@@ -1,0 +1,40 @@
+<div id="footer" class="self-clear">
+  <ul id='footer-widget-col-1' class='footer-col footer-widget-col'>
+    <li id="linkcat-2" class="widget widget_links">
+      <h3 class='widgettitle'>Blogroll</h3>
+      <ul class='xoxo blogroll'>
+        <% @footer[:links].each do |k,v| %>
+            <li><%= link_to k, v %></li>
+         <% end %>
+      </ul>
+    </li>
+  </ul>
+  <ul id='footer-widget-col-2' class='footer-col footer-widget-col'>
+    <li id="archives-3" class="widget widget_archive">
+      <h3 class='widgettitle'>Archives</h3>
+      <ul>
+         <% @footer[:archives].keys.each do |key| %>
+            <li><%= link_to build_month_archive_display(key), "/posts/#{key}" %></li>
+         <% end %>                                                                                                      
+      </ul>
+    </li>
+  </ul>
+  <ul id='footer-widget-col-3' class='footer-col footer-widget-col'>
+    <li id="categories-3" class="widget widget_categories">
+      <h3 class='widgettitle'>Categories Cloud</h3>
+      <% tag_cloud(@footer[:tags], %w(tag1 tag2 tag3 tag4)) do |tag, css_class| %>
+        <%= link_to tag.name, { :action => :tag, :id => tag.name }, :class => css_class %>
+      <% end %>
+    </li>
+  </ul>
+  <ul id='footer-widget-col-4' class='footer-col footer-widget-col'>
+    <li id="recent-posts-3" class="widget widget_recent_entries">
+      <h3 class='widgettitle'>Recent Posts</h3>
+      <ul>
+         <% @footer[:recent].each do |post| %>
+            <li><%= link_to post.title, post %></li>
+         <% end %>
+      </ul>
+    </li>
+  </ul>
+</div>

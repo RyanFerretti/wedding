@@ -1,0 +1,10 @@
+<% content_for :content_class, 'table-wrap' %>
+<% content_for :body_class, 'has-sidebar' %>
+<div class="post-wrap self-clear content-bg">
+  <div class="post-wrap-inner">
+    <div class='post-header normal'>
+      <p>Sign Up... or if you already have an account: <%= link_to "Sign In", login_path %>.</p>
+      <%= render :partial => 'form' %>
+    </div>
+  </div>
+</div>

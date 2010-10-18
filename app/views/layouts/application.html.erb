@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <title><%= h(yield(:title) || "Julie & Ryan 2011") %></title>
+    <%= javascript_include_tag 'jquery-1.4.2.min.js', 'application', 'lightbox/js/jquery.lightbox-0.5.min.js' %>
+    <%= stylesheet_link_tag 'application', '/javascript/lightbox/css/jquery.lightbox-0.5.css' %>
+    <%= auto_discovery_link_tag :atom, posts_path(:atom) %>
+    <%= yield(:head) %>
+  </head>
+  <body class="home blog <%= yield(:body_class) %>">
+    <%= render :partial => 'users/user_management' %>
+    <div id="outer-wrap-centered">
+    <div id="main-wrap-outer">
+    <div id="main-wrap-inner">
+    <div id="inner-wrap">
+      <%= yield(:header) || render_partial_layout('header') %>
+
+      <%- flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <%- end -%>
+
+      <%- if show_title? -%>
+        <h1><%=h yield(:title) %></h1>
+      <%- end -%>
+
+      <div id='content-wrap' class='self-clear <%= yield(:content_class) %>'>
+        <div id='content'>
+          <%= yield %>
+        </div>
+      </div>
+
+      <%= render_partial_layout 'footer' %>
+    </div>
+    </div>
+    </div>
+    </div>
+    <%= render :partial => 'tweets/tweets_summary.html.erb' %>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+<div class="top_right">
+  <% if @current_user %>
+    <%= link_to 'Profile', user_path(@current_user) %>&nbsp;|&nbsp;<%= link_to 'Sign Out', '/logout' %>
+  <% else %>
+    <%= link_to 'Sign In', '/login' %>
+  <% end %>
+</div>

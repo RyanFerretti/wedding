@@ -1,0 +1,4 @@
+<% form_for [post,PostAttachment.new], :html => { :multipart => true } do |f| %>
+    <%= f.file_field :photo %>
+    <%= f.submit 'Attach' %>
+<% end %>

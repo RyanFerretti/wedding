@@ -1,0 +1,61 @@
+<% content_for :body_class, 'has-sidebar' %>
+<% content_for :content_class, 'table-wrap' %>
+<table id='content-table'>
+<tr>
+  <td id="sidebar">
+    <ul>
+      <li class="widget widget_p3-twitter-html">
+        <h3 class='widgettitle'>Twitter</h3>
+		<div class="p3-twitter-html p3-html-twitter-widget p3-html-twitter-widget-prophotoblogs">
+			<%= prepare_tweet @tweet %>
+			<p>Follow us on <a href="http://twitter.com/julie_and_ryan">Twitter</a></p>
+		</div>
+      </li>
+      <li class="widget">
+        <h3 class='widgettitle'>Facebook</h3>
+        <div id="fb-root"></div>
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({appId: '152597274779353', status: true, cookie: true, xfbml: true});
+          };
+          (function() {
+            var e = document.createElement('script'); e.async = true;
+            e.src = document.location.protocol +
+              '//connect.facebook.net/en_US/all.js';
+            document.getElementById('fb-root').appendChild(e);
+          }());
+        </script>
+		<div class="widget_p3-social-facebook">
+            <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+            <fb:like-box href="http://www.facebook.com/pages/Julie-and-Ryans-Wedding/153802334660289" width="200" height="470" connections="12" stream="false" header="false"></fb:like-box>
+        </div>
+	  </li>
+<!--
+      <li id="p3-text-5" class="widget widget_p3-text">
+        <h3 class='widgettitle'>Text Widget</h3>
+        <p>This is a <strong>text widget</strong>.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </li>
+-->
+    </ul>
+  </td>
+  <td id='content-td'>
+    <div id="post-2" class="post-2 page hentry category-uncategorized self-clear">
+	  <div class="post-wrap self-clear content-bg">
+	    <div class="post-wrap-inner">
+		  <div class='post-header normal'>
+            <div class='post-title-wrap'>
+		      <h1 class='entry-title'>Julie and Ryan</h1>
+	        </div>
+		  </div>
+		  <div class="entry-content self-clear">
+		    <p style="font-size:1.3em;">We have created this website to take the wedding experience to the next level.  Gone are the days of having to mail your RSVP... do it here.  Don't know whether to choose the chicken or the steak... do it here (with pictures!).  There are so many things we can do we can't wait to get it rolling!</p>
+            <img src="/images/sunset.jpg"/>
+          </div><!-- .entry content -->
+        </div><!-- .post-wrap-inner -->
+	    <div class="post-footer"></div>
+	  </div><!-- .post-wrap -->
+    </div><!-- #post-2-->
+  </td>
+</tr>
+</table>
+
