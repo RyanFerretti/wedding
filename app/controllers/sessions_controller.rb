@@ -19,10 +19,20 @@ class SessionsController < ApplicationController
 
 private
 
+  def find_or_initialize_user(identity_url)
+    if logged_in?
+      current_user.identity_url = identity_url
+      current_user.save
+      current_user
+    else
+      User.find_or_initialize_by_identity_url(identity_url)
+    end
+  end
+
   def open_id_authentication(openid_url)
     authenticate_with_open_id(openid_url, :required => [:nickname, :email]) do |result, identity_url, registration|
       if result.successful?
-        user = User.find_or_initialize_by_identity_url(identity_url)
+        user = find_or_initialize_user(identity_url)
         if user.new_record?
           user.username = registration['nickname']
           user.email = registration['email']
@@ -37,7 +47,7 @@ private
 
   def password_authentication(login, password)
     user = User.authenticate(login, password)
-    if logged_in?
+    if user
       successful_login user
     else
       failed_login

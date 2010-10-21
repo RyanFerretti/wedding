@@ -16,18 +16,17 @@
     <%= f.label :username %><br />
     <%= f.text_field :username %>
     <% if @user.identity_url %>
-      &nbsp;( you don't need a username because you logged in using OpenId )      
+      &nbsp;( you don't need a username because you logged in using OpenId )
     <% end %>
   </p>
 
   <% if !@user.identity_url %>
     <p>
-      <%= f.label :username %><br />
-      <%= f.text_field :username %>
-    </p>
-    <p>
       <%= f.label :password %><br />
       <%= f.password_field :password %>
+      <% if editing %>
+        &nbsp;( if you don't want to change your password leave these blank!!! )
+      <% end %>
     </p>
     <p>
       <%= f.label :password_confirmation, "Confirm Password" %><br />

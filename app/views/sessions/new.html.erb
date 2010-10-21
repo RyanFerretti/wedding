@@ -14,11 +14,9 @@
             <%= label_tag :password %><br />
             <%= password_field_tag :password %>
           </p>
-          <p>
-            <%= label_tag 'OpenID URL' %><br />
-            <%= text_field_tag "openid_url" %>
-          </p>
           <p><%= submit_tag "Log in" %></p>
+          <br/>
+          <%= render :partial => 'open_id' %>
         <% end %>
     </div>
   </div>

@@ -24,7 +24,10 @@
             &nbsp;( you don't need a username because you logged in using OpenId )
         <% end %>
       </p>
-      <%= link_to 'Edit', edit_user_path(@user) %>
+      <%= link_to 'Edit', edit_user_path(@user) %><br/>
+      <% if !@user.identity_url %>
+        <%= link_to 'Add Open Id to Your Account', "#{edit_user_path(@user)}?open=id" %>
+      <% end %>
     </div>
   </div>
 </div>

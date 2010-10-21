@@ -6,6 +6,11 @@ class UsersController < ApplicationController
   # GET /posts/1/edit
   def edit
     @user = User.find(params[:id])
+    if params[:open]
+      render :action => 'add_open_id'
+    else
+      render :action => 'new'
+    end
   end
 
   def show
