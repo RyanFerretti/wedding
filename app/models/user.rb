@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
                     :url => "/assets/avatars/:id/:style/:basename.:extension"
 
   # new columns need to be added here to be writable through mass assignment
-  attr_accessible :first_name, :last_name, :username, :email, :avatar, :password, :password_confirmation, :identity_url
+  attr_accessible :first_name, :last_name, :username, :email, :avatar, :password, :password_confirmation, :identity_url, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at 
   
   attr_accessor :password
   before_save :prepare_password
