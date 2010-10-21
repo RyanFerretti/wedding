@@ -5,7 +5,9 @@
     <div class='post-header normal'>
       <h4>Your Profile</h4>
       <br/>
-      <%= image_tag @user.avatar.url(:small) %>
+      <% if @user.avatar %> 
+        <%= image_tag @user.avatar.url(:small) %>
+      <% end %>
       <p>
         <b>First Name:</b>
         <%= @user.first_name %>
