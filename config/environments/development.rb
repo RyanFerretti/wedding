@@ -16,4 +16,6 @@ config.action_controller.perform_caching             = true
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
 
+# Paperclip Stuff
+Paperclip.options[:swallow_stderr] = false
 Paperclip.options[:command_path] = "DYLD_LIBRARY_PATH='/Users/Ryan/Developement/Libraries/ImageMagick-6.6.4/lib' /Users/Ryan/Developement/Libraries/ImageMagick-6.6.4/bin"

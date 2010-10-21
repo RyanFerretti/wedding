@@ -3,7 +3,7 @@
   <head>
     <title><%= h(yield(:title) || "Julie & Ryan 2011") %></title>
     <%= javascript_include_tag 'jquery-1.4.2.min.js', 'application', 'lightbox/js/jquery.lightbox-0.5.min.js' %>
-    <%= stylesheet_link_tag 'application', '/javascript/lightbox/css/jquery.lightbox-0.5.css' %>
+    <%= stylesheet_link_tag 'application', '/javascripts/lightbox/css/jquery.lightbox-0.5.css' %>
     <%= auto_discovery_link_tag :atom, posts_path(:atom) %>
     <%= yield(:head) %>
   </head>

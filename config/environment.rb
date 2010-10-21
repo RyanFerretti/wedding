@@ -12,7 +12,7 @@ Rails::Initializer.run do |config|
   config.gem "faraday_middleware"
   config.gem "cancan", :version => '1.4.0'
   config.gem "rack-openid", :lib => 'rack', :version => '1.2.0'
-
+  config.gem "aws-s3", :lib => "aws/s3", :version => '0.6.2'
   config.time_zone = 'UTC'
 end
 
