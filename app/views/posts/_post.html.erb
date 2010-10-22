@@ -63,7 +63,7 @@
         <!-- End Comments Header -->
         <div id="comments-body-<%= h post.id %>" class="comments-body" style="display:none;">
           <div class="comments-body-inner-wrap">
-            <div id="comments_body_inner" class="comments-body-inner">
+            <div id="comments_body_inner_<%= h post.id %>" class="comments-body-inner">
               <%= render :partial => post.comments %>
             </div>
           </div>
@@ -85,13 +85,13 @@
               </div>
               <br/>
             <% end %>
-            <div id="addcomment-error"><span>There was an error submitting your comment.  Please try again.</span></div>
             <div class="cmt-comment">
               <p><%= f.label :body, "Comment" %></p>
             </div>
             <div class="cmt-comment">
               <%= f.text_area :body, :cols => 65, :rows => 12 %>
             </div>
+            <div id="addcomment-error-<%= h post.id %>" style="display:none"><span style="color:red">There was an error submitting your comment.  Please try again.</span></div>            
             <div class="cmt-submit">
               <%= f.submit "Post Comment" %>
               <input id="cancel_add_comment_<%= h post.id %>" class="cancel_add_comment" value="Cancel" type="button">

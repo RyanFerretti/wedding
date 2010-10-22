@@ -4,10 +4,16 @@ class CommentsController < ApplicationController
     if current_user
       params[:comment][:author] = current_user.first_name 
     end
-    @comment = @post.comments.create!(params[:comment])
+    @comment = @post.comments.create(params[:comment])
     respond_to do |format|
       format.html { redirect_to @post }
-      format.js
+      format.js   {
+        if @comment.new_record?
+          render :action => 'errors'
+        else
+          render :action => 'create'
+        end
+      }
     end
   end
 end
