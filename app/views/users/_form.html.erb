@@ -37,5 +37,7 @@
       <%= f.password_field :password_confirmation %>
     </p>
   <% end %>
-  <p><%= f.submit "Save" %></p>
+  <p><input id="edit_user_save" name="commit" type="button" value="Save"></p>
+  <p id="progressText"></p>
+  <div id="progressBar"></div>
 <% end %>

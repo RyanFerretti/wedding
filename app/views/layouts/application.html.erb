@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
     <title><%= h(yield(:title) || "Julie & Ryan 2011") %></title>
-    <%= javascript_include_tag 'jquery-1.4.2.min.js', 'application', 'lightbox/js/jquery.lightbox-0.5.min.js' %>
-    <%= stylesheet_link_tag 'application', '/javascripts/lightbox/css/jquery.lightbox-0.5.css' %>
+    <%= javascript_include_tag 'jquery-1.4.2.min.js', 'application', 'lightbox/js/jquery.lightbox-0.5.min.js', "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" %>
+    <%= stylesheet_link_tag 'application', '/javascripts/lightbox/css/jquery.lightbox-0.5.css',"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" %>
     <%= auto_discovery_link_tag :atom, posts_path(:atom) %>
     <%= yield(:head) %>
   </head>

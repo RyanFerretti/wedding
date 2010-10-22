@@ -82,7 +82,33 @@ $(document).ready(function(){
     }
 
     p3_lightbox_gallery();
+
+    $("#edit_user_save").click(function() {
+        $(this).attr('disabled', 'disabled');
+        percentage = 5;
+        if($("#user_avatar").val().length > 0){
+            increaseProgressBar(percentage);
+        }
+        $(".edit_user").submit();
+    });
 });
+
+function getProgressText(percentage){
+    if(percentage<20){ return "Uploading Profile Image...";}
+    else if(percentage<50){ return "Resizing Image to fit our Needs...";}
+    else if(percentage<80){ return "Saving Image to our Massive Database...";}
+    else if(percentage<100){ return "Completing Profile Update!";}
+}
+
+function increaseProgressBar(percentage) {
+    $("#progressText").text(getProgressText(percentage));
+    $("#progressBar").progressbar({ value: percentage });
+    percentage += Math.floor(Math.random()*11);
+    if(percentage <= 100){
+        window.setTimeout(increaseProgressBar,(Math.floor(Math.random()*1501)+600),percentage);
+    }
+}
+
 
 function show_hide_comments() {
     $('.comments-count').click(function(){
