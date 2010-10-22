@@ -3,13 +3,10 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar,
                     :styles => { :small => "85x85>" },
-                    :storage => ENV['S3_BUCKET'] ? :s3 : :filesystem,
-                    :s3_credentials => {
-                      :access_key_id => ENV['S3_KEY'],
-                      :secret_access_key => ENV['S3_SECRET']
-                    },
-                    :bucket => ENV['S3_BUCKET'],
-                    :path => ENV['S3_BUCKET'] ? ":class/:id/:style/:filename" : ":rails_root/public/assets/avatars/:id/:style/:basename.:extension"#,
+                    :storage => ENV['S3_BUCKET'] ? :s3 : :s3,
+                    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                    #:bucket => ENV['S3_BUCKET'],
+                    :path => ENV['S3_BUCKET'] ? ":class/:id/:style/:filename" : ":class/:id/:style/:filename"#,
                     #:url => "/assets/avatars/:id/:style/:basename.:extension"
 
   # new columns need to be added here to be writable through mass assignment
