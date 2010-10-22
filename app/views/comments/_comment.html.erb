@@ -1,7 +1,7 @@
 <% div_for comment, :class => 'comment even thread-even depth-1 self-clear p3comment' do %>
   <div class="comment-top">
     <span class="comment-author">
-      <a href='http://www.jabezphotography.com' rel='external nofollow' class='url'>john</a>
+      <a href='http://www.jabezphotography.com' rel='external nofollow' class='url'><%= comment.author.titleize %></a>
       <span>-</span>
     </span>
     <span class="comment-time"><%= time_ago_in_words(comment.created_at) %> ago</span>

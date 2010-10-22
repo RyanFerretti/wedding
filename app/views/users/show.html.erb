@@ -5,7 +5,7 @@
     <div class='post-header normal'>
       <h4>Your Profile</h4>
       <br/>
-      <% if @user.avatar %> 
+      <% if @user.avatar.file? %>
         <%= image_tag @user.avatar.url(:small) %>
       <% end %>
       <p>

@@ -8,15 +8,15 @@ p2 = Post.create!(:user_id => u1.id, :post_type => :normal, :title => "How do I 
 p3 = Post.create!(:user_id => u1.id, :post_type => :normal, :title => "Worrying about the wrong things.", :tag_list => "awesome, hefty",:body => "Starting a new company is full of chaos and uncertainty. There are plenty of very reasonable things to worry about, like, will we make any money? Do we have the right product? How do we find any customers? But these are often not the things starters choose to worry about. Instead, they worry about things they should be so lucky to encounter. Will my software platform scale if I get 10,000 customers per day? Do we have the right strategic plan for the next three years? What should our stock option plan look like so itll cope with 100+ people? To make something of yourself, you can only worry about so much. Theres a certain set of worry slots available and if you fill them with all these possibly-maybe concerns, there wont be any left for things thatll matter tomorrow.")
 p4 = Post.create!(:user_id => u1.id, :post_type => :normal, :title => "Loading spinner animation using CSS and WebKit", :tag_list => "slick, dope",:body => "When it comes to acquisitions, there are only two things worth buying: products and customers. When you buy either, youre buying a solid stream of revenue. All you have to do is not fuck it up. Thats harder than you think, but the good news is that there is room for error. Fuck it up a little and only a few will leave. You still have the entrenched rest to make the purchase pay. Not so with ideas or talent. These are the purchases of aspiration: Imagine if we took that scrappy idea with those underpaid, hungry champions, and we gave them all the resources in the world. They could paint all the colors of the rainbow and still have pixie dust left to spare!")
 
-p1.comments.create!(:body => "seriously, that was EXACTLY what I needed to read right now. I just became your lifetime fan. seriously")
-p1.comments.create!(:body => "I think there are probably counterexamples in that vein, though I agree with your point with respect to large companies.")
-p1.comments.create!(:body => "As for hiring talentÉwell you can get them on payrole sure, but getting optimal performance and creativity generally isnt achieved via monetary incentives.")
-p1.comments.create!(:body => "Necessity is the mother of invention , whilst may be a cliche is something I try and live by.")
+p1.comments.create!(:author => "Ryan", :body => "seriously, that was EXACTLY what I needed to read right now. I just became your lifetime fan. seriously")
+p1.comments.create!(:author => "Jim", :body => "I think there are probably counterexamples in that vein, though I agree with your point with respect to large companies.")
+p1.comments.create!(:author => "John", :body => "As for hiring talentÉwell you can get them on payrole sure, but getting optimal performance and creativity generally isnt achieved via monetary incentives.")
+p1.comments.create!(:author => "Mark", :body => "Necessity is the mother of invention , whilst may be a cliche is something I try and live by.")
 
-p2.comments.create!(:body => "seriously, that was EXACTLY what I needed to read right now. I just became your lifetime fan. seriously")
-p2.comments.create!(:body => "I think there are probably counterexamples in that vein, though I agree with your point with respect to large companies.")
+p2.comments.create!(:author => "Julie", :body => "seriously, that was EXACTLY what I needed to read right now. I just became your lifetime fan. seriously")
+p2.comments.create!(:author => "Pete", :body => "I think there are probably counterexamples in that vein, though I agree with your point with respect to large companies.")
 
-p4.comments.create!(:body => "seriously, that was EXACTLY what I needed to read right now. I just became your lifetime fan. seriously")
+p4.comments.create!(:author => "Emily", :body => "seriously, that was EXACTLY what I needed to read right now. I just became your lifetime fan. seriously")
 
 puts "# of Users created: #{User.all.count}"
 puts "# of Posts created: #{Post.all.count}"

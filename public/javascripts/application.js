@@ -125,7 +125,7 @@ function show_hide_add_comment(){
         $("#addcomment-holder-" + get_id(this.id,1)).slideToggle(400);
         return false;
     });
-    $('#cancel_add_comment').click(function(){
+    $('.cancel_add_comment').click(function(){
         $("#addcomment-holder-" + get_id(this.id,3)).slideToggle(400);
         return false;
     });

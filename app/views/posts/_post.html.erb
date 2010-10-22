@@ -70,17 +70,21 @@
         </div>
       </div>
       <!-- End Comments -->
+      <br/>
       <div id="addcomment-holder-<%= h post.id %>" class="addcomment-holder" style="display:none">
         <div class="formcontainer" id="addcomment">
           <% form_for [post, Comment.new], :html => {:id => "new_comment_#{h(post.id)}",:class => "new_commnet_form"} do |f| %>
-            <div class="cmt-name">
-              <p>
-                <%= f.label :author, "Name" %><span class="required">*</span>
-              </p>
-            </div>
-            <div class="cmt-name">
-                <input id="author" name="author" value="" size="40" maxlength="60" tabindex="3" type="text">
-            </div>
+            <% if !@current_user %>
+              <div class="cmt-name">
+                <p>
+                  <%= f.label :author, "Name" %><span class="required">*</span>
+                </p>
+              </div>
+              <div class="cmt-name">
+                <%= f.text_field :author %>
+              </div>
+              <br/>
+            <% end %>
             <div id="addcomment-error"><span>There was an error submitting your comment.  Please try again.</span></div>
             <div class="cmt-comment">
               <p><%= f.label :body, "Comment" %></p>
@@ -90,7 +94,7 @@
             </div>
             <div class="cmt-submit">
               <%= f.submit "Post Comment" %>
-              <input id="cancel_add_comment_<%= h post.id %>" class="cancel-reply" value="Cancel" type="button">
+              <input id="cancel_add_comment_<%= h post.id %>" class="cancel_add_comment" value="Cancel" type="button">
             </div>
           <% end %>
         </div>

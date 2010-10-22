@@ -2,7 +2,7 @@ module PostsHelper
   def build_tags_links(post)
     tags_html = ""
     post.tags.each do |tag|
-      tags_html << "<a  href='/posts/tagged/#{tag.name}'>#{tag.name.titleize}</a> "
+      tags_html << "<a  href='/posts/tag/#{tag.name}'>#{tag.name.titleize}</a> "
     end
     tags_html
   end
