@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
                       :secret_access_key => ENV['S3_SECRET']
                     },
                     :bucket => ENV['S3_BUCKET'],
-                    :path => ENV['S3_BUCKET'] ? ":class/:id/:style/:filename" : ":rails_root/public/assets/avatars/:id/:style/:basename.:extension",
-                    :url => "/assets/avatars/:id/:style/:basename.:extension"
+                    :path => ENV['S3_BUCKET'] ? ":class/:id/:style/:filename" : ":rails_root/public/assets/avatars/:id/:style/:basename.:extension"#,
+                    #:url => "/assets/avatars/:id/:style/:basename.:extension"
 
   # new columns need to be added here to be writable through mass assignment
   attr_accessible :first_name, :last_name, :username, :email, :avatar, :password, :password_confirmation, :identity_url #, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at 
