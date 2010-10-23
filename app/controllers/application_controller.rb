@@ -14,6 +14,12 @@ class ApplicationController < ActionController::Base
     true
   end
 
+  def user_action_allowed
+    if !current_user || current_user.id != params[:id].to_i
+      raise CanCan::AccessDenied.new("You can't do that to other people's profiles!")
+    end
+  end
+
   def build_footer
     @footer = {}
     @footer[:archives] = Post.all.group_by{ |p| "#{p.created_at.year}/#{p.created_at.month}" }

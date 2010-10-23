@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :user_action_allowed, :except => [:new,:show,:create]
+
   def new
     @user = User.new
   end
