@@ -1506,6 +1506,13 @@ body.single .entry-comments {
     text-transform: uppercase;
     margin-left:10px;
 }
+
+.comment-picture {
+    float:left;
+    margin-right:10px;
+    margin-top:2px;
+}
+
 .comment-top .comment-time {
     margin-left:0;
 }

@@ -12,6 +12,11 @@
     <%= f.label :email, "Email Address" %><br />
     <%= f.text_field :email %>
   </p>
+  <% if @user.avatar.file? %>
+    <a class="profile_lightbox_links" href='<%= @user.avatar.url(:original) %>'>
+      <%= image_tag @user.avatar.url(:small) %>
+    </a>
+  <% end %>
   <p>
     <%= f.label :avatar, "Profile Picture!" %><br />
     <%= f.file_field :avatar %>

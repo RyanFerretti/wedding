@@ -6,7 +6,9 @@
       <h4>Your Profile</h4>
       <br/>
       <% if @user.avatar.file? %>
-        <%= image_tag @user.avatar.url(:small) %>
+        <a class="profile_lightbox_links" href='<%= @user.avatar.url(:original) %>'>
+          <%= image_tag @user.avatar.url(:small) %>
+        </a>
       <% end %>
       <p>
         <b>First Name:</b>

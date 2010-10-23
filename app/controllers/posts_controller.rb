@@ -45,6 +45,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     authorize! :create, @post, :message => "Not authorized to create a blog post."
+    @post.user = current_user
     respond_to do |format|
       if @post.save
         format.html { redirect_to(@post, :notice => 'Post was successfully created.') }

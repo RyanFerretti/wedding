@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_many :posts
 
   has_attached_file :avatar,
-                    :styles => { :small => "85x85>" },
+                    :styles => { :thumb => "50x50>", :small => "100x100>", :original => "800x600>" },
                     :storage => ENV['S3_BUCKET'] ? :s3 : :filesystem,
                     :s3_credentials => {
                       :access_key_id => ENV['S3_KEY'],

@@ -11,7 +11,7 @@
 		    </h2>
 	      </div>
           <div class='entry-meta entry-meta-top'>
-			<span class="post-date postmeta"><span><%= h post.created_at.to_s %></span></span><span class="post-categories postmeta">Posted in <a href="#"><%= build_tags_links(post) %></a> by <a href="#"><%= post.user.username.titleize %></a></span><span id="post_header_comment_count_<%= h post.id %>" class="post-header-comment-count postmeta"><%= h pluralize(post.comments.size,"comment") %></span>
+			<span class="post-date postmeta"><span><%= h post.created_at.to_s %></span></span><span class="post-categories postmeta">Posted in <a href="#"><%= build_tags_links(post) %></a> by <a href="#"><%= post.user.first_name.titleize %></a></span><span id="post_header_comment_count_<%= h post.id %>" class="post-header-comment-count postmeta"><%= h pluralize(post.comments.size,"comment") %></span>
 		  </div>
 	    </div>
         <div class="entry-content self-clear">

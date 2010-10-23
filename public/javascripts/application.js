@@ -91,6 +91,8 @@ $(document).ready(function(){
         }
         $(".edit_user").submit();
     });
+
+    $('.profile_lightbox_links').lightBox();
 });
 
 function getProgressText(percentage){
