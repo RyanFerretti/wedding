@@ -154,19 +154,6 @@ em {
 #topnav li:hover {
     position:static; /* help IE7 a bit */
 }
-#topnav li ul { /* second-level lists */
-    position: absolute;
-    width: 130px;
-    left: -999em;
-}
-#topnav li ul a {
-    width:114px;
-    padding: 5px 8px;
-    font-size: 80%;
-}
-#topnav li:hover ul, #topnav li.sfhover ul { /* lists nested under hovered list items */
-    left: auto;
-}
 #topnav #searchsubmit-top {
     margin-top: -3px;
 }
@@ -183,45 +170,10 @@ li#search-top ul li input#s-top, li#search-top ul li input#searchsubmit-top {
 li#nav-rss a {
     float:left;
 }
-#topnav li ul ul,
-#topnav li ul ul ul,
-#topnav li ul ul ul ul,
-#topnav li ul ul ul ul ul {
-    margin: -1.90em 0 0 130px;
-    #margin-top:-1.85em;
-}
-#topnav li:hover ul ul, #topnav li.sfhover ul ul,
-#topnav li:hover ul ul ul, #topnav li.sfhover ul ul ul,
-#topnav li:hover ul ul ul ul, #topnav li.sfhover ul ul ul ul,
-#topnav li:hover ul ul ul ul ul, #topnav li.sfhover ul ul ul ul ul {
-    left: -999em;
-}
-#topnav li li:hover ul, #topnav li li.sfhover ul,
-#topnav li li li:hover ul, #topnav li li li.sfhover ul,
-#topnav li li li li:hover ul, #topnav li li li li.sfhover ul,
-#topnav li li li li li:hover ul, #topnav li li li li li.sfhover ul {
-    left: auto;
-}
+
 #topnav {
     z-index:2;
-}
-#topnav ul {
-    z-index:3;
-}
-#topnav ul li {
-    z-index:4;
-}
-#topnav ul li ul {
-    z-index:5;
-}
-#topnav ul li ul li {
-    z-index:6;
-}
-#topnav a {
-    z-index:7;
-}
-
-
+}   
 
 /* ------------------ */
 /* -- CONTACT FORM -- */
@@ -527,7 +479,7 @@ p#nav-below {
 }
 
 #masthead {
-    margin: 47px 0 46px 0;
+    margin: 47px 0 25px 0;
 }
 #topnav-wrap {
     margin: 0px 0 0px 0;
@@ -542,7 +494,7 @@ p#nav-below {
     margin: 0px 0 0px 0;
 }
 .post-wrap, .page-title-wrap {
-    margin-bottom:45px;
+    margin-bottom:25px;
 }
 #bio {
     margin-bottom:45px;
@@ -638,37 +590,10 @@ h2#alt-h1 a {
     display:inline;
     position:absolute;
     right:0;
-    bottom:382px;
+    bottom:360px;
 }
 body.no-masthead #topnav {
     bottom:3px;
-}
-
-/* masthead css 
-.masthead-image {
-    width: 960px;
-
-
-
-    float: none;
-    height: 332px;
-    overflow: hidden;
-}
-#masthead {
-    overflow:hidden;
-    position:relative;
-
-}
-#topnav li#search-top {
-    float:left;
-    display:inline;
-}
-#masthead-image-wrapper {
-    overflow:hidden;
-    height: 332px;
-}
-.masthead-image a.no-link {
-    cursor:default;
 }
 
 /* -- bio area css -- */
@@ -1860,7 +1785,7 @@ span.statcounter {
 }
 
 .table-wrap {
-    margin-bottom:45px;
+    margin-bottom:25px;
 }
 
 .tag1 { font-size: 1.0em !important; }
