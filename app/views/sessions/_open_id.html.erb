@@ -1,8 +1,8 @@
-<p>You can also log in using your Gmail!</p>
-<p><a href="javascript:$('#openid_url').val('https://www.google.com/accounts/o8/id');$('#open_id_submit').click();">Log in with Gmail</a></p>
+<p>You can also log in using your Gmail!<br/>This way, you won't have to remember ANOTHER<br/>username/password combination.</p>
+<p><a href="javascript:$('#openid_url').val('https://www.google.com/accounts/o8/id');$('#open_id_submit').click();">Click to log in with Gmail</a></p>
 <!--<p><a href="javascript:$('#openid_url').val('https://yahoo.com');$('#open_id_submit').click();">Log in with Yahoo</a></p>-->
 <p>
-<%= label_tag 'OpenID URL' %><br />
+<%= label_tag 'Or enter your OpenID URL' %><br />
 <%= text_field_tag "openid_url" %>
 </p>
 <p><%= submit_tag "Log in", :id => 'open_id_submit', :name => 'open_id_submit' %></p>

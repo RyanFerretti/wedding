@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     if params[:open]
       render :action => 'add_open_id'
     else
-      render :action => 'new'
+      render :action => 'edit'
     end
   end
 

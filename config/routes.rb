@@ -10,11 +10,12 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :sessions
 
   map.resources :users
+  
+  map.root :controller => "welcome"
 
   map.signup 'signup', :controller => 'users', :action => 'new'
   map.logout 'logout', :controller => 'sessions', :action => 'destroy'
   map.login 'login', :controller => 'sessions', :action => 'new'
-  map.root :controller => "welcome"
   map.the_day 'the_day', :controller => 'the_day', :action => 'index'
   map.wedding_party 'wedding_party', :controller => 'wedding_party', :action => 'index'
   map.visualize 'visualize', :controller => 'visualize', :action => 'index'

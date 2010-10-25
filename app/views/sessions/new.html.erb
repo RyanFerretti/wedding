@@ -3,20 +3,25 @@
 <div class="post-wrap self-clear content-bg">
   <div class="post-wrap-inner">
     <div class='post-header normal'>
-        <p>Don't have an account? <%= link_to "Sign up!", signup_path %></p>
-
         <% form_tag sessions_path do %>
-          <p>
-            <%= label_tag :login, "Username or Email Address" %><br />
-            <%= text_field_tag :login, params[:login] %>
-          </p>
-          <p>
-            <%= label_tag :password %><br />
-            <%= password_field_tag :password %>
-          </p>
-          <p><%= submit_tag "Log in" %></p>
-          <br/>
-          <%= render :partial => 'open_id' %>
+          <div class="go_left">
+            <p>Don't have an account? <%= link_to "Sign up!", signup_path %></p>
+            <p>
+              <%= label_tag :login, "Username or Email Address" %><br />
+              <%= text_field_tag :login, params[:login] %>
+            </p>
+            <p>
+              <%= label_tag :password %><br />
+              <%= password_field_tag :password %>
+            </p>
+            <p><%= submit_tag "Log in" %></p>
+          </div>
+          <div class="go_left">
+            <h1 class="bigger_or">OR</h1>
+          </div>
+          <div class="go_right">
+            <%= render :partial => 'open_id' %>
+          </div>
         <% end %>
     </div>
   </div>

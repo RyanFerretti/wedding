@@ -109,6 +109,16 @@ em {
 .entry-content h5 {
     font-size:105%;
 }
+
+.bigger_or  {
+    font-style:normal;
+    font-size:50px;
+    text-transform:none;
+    line-height:3em;
+    font-weight:400;
+    margin-left:85px;
+}
+
 #main-wrap-inner img.wp-smiley {
     border:none !important;
     padding:0 0.25em !important;
@@ -1806,4 +1816,14 @@ input#openid_url {
    background-position: 0 50%;
    color: #000;
    padding-left: 18px;
+}
+
+.go_right {
+    margin-right:50px;
+    float:right;
+}
+
+.go_left {
+    margin-left:50px;
+    float:left;
 }
