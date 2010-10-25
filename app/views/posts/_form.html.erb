@@ -22,6 +22,10 @@
                 <%= f.select(:post_type, %w(Normal Picture), :prompt=>'- Please Select -', :selected=> post.post_type) %>
               </p>
               <p>
+                <%= f.label :tag_list, 'Tags' %><br/>
+                <%= f.text_field :tag_list %> 
+              </p>
+              <p>
                 <%= link_to pluralize(post.post_attachments.count,'Attachment'), post_post_attachments_path(post) %>
               </p>
               <p>
