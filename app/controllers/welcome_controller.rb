@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    @tweet = "Twitter is giving us problems!"#get_tweet_from_twitter()
+    @tweet = get_tweet_from_twitter()
   end
 
 private
@@ -17,6 +17,10 @@ private
       req.url '/statuses/user_timeline.json', :screen_name => 'julie_and_ryan', :count => '1'
     end
 
-    resp.body[0].text
+    if resp.body[0]
+      resp.body[0].text
+    else
+      "Twitter is giving us problems!"
+    end
   end
 end
