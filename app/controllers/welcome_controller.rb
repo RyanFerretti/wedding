@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    @tweet = get_tweet_from_twitter()
+    @tweet = "Twitter is giving us problems!"#get_tweet_from_twitter()
   end
 
 private
