@@ -92,7 +92,7 @@ private
       month = DateTime.new(params[:year].to_i, params[:month].to_i)
       Post.all(:conditions => { :created_at => (month.beginning_of_month)..(month.end_of_month) })
     else
-      Post.all
+      Post.find(:all, :order => "id DESC")
     end
   end
 end
