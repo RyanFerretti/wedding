@@ -23,7 +23,7 @@
     <li id="categories-3" class="widget widget_categories">
       <h3 class='widgettitle'>Categories Cloud</h3>
       <% tag_cloud(@footer[:tags], %w(tag1 tag2 tag3 tag4)) do |tag, css_class| %>
-        <%= link_to tag.name, { :action => :tag, :id => tag.name }, :class => css_class %>
+        <%= link_to "#{tag.name}", "/posts/tag/#{tag.name}", :class => css_class %>
       <% end %>
     </li>
   </ul>
