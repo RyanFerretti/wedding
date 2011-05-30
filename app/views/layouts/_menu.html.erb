@@ -13,7 +13,7 @@
       <%= link_to_unless_current "Wedding Party", wedding_party_path do |name| current_active_link(name) end %>
     </li>
     <li class="categories">
-      <a>RSVP</a>
+      <%= link_to_unless_current "Registries", registries_path do |name| current_active_link(name) end %>
     </li>
     <li id="navlink_contact">
       <%= link_to_unless_current "Visualize", visualize_path do |name| current_active_link(name) end %>

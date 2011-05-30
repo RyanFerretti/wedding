@@ -17,6 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   map.logout 'logout', :controller => 'sessions', :action => 'destroy'
   map.login 'login', :controller => 'sessions', :action => 'new'
   map.the_day 'the_day', :controller => 'the_day', :action => 'index'
+  map.registries 'registries', :controller => 'registry', :action => 'index'
   map.wedding_party 'wedding_party', :controller => 'wedding_party', :action => 'index'
   map.visualize 'visualize', :controller => 'visualize', :action => 'index'
 
