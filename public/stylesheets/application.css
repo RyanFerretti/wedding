@@ -1838,4 +1838,5 @@ input#openid_url {
 
 .left {
     float:left;
+    clear: none;
 }
