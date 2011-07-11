@@ -1845,3 +1845,7 @@ input#openid_url {
     float:left;
     clear: none;
 }
+
+.hotel-image {
+    margin-bottom:5px !important;
+}
