@@ -1831,3 +1831,11 @@ input#openid_url {
 .reception-left {
     margin-top: 167px;
 }
+
+.right {
+    float:right;
+}
+
+.left {
+    float:left;
+}
