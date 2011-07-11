@@ -1537,6 +1537,11 @@ table#content-table {
 body.has-sidebar #content-td {
     width:699px;
 }
+
+body.has-sidebar #content-td-big {
+    width:900px;
+}
+
 #sidebar {
     vertical-align:top;
     padding-top:30px;
