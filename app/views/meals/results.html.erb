@@ -1,0 +1,40 @@
+<% content_for :body_class, 'has-sidebar' %>
+<% content_for :content_class, 'table-wrap' %>
+<table id='content-table'>
+<tr>
+  <td id='content-td-big'>
+    <div id="post-2" class="post-2 page hentry category-uncategorized self-clear">
+	  <div class="post-wrap self-clear content-bg">
+	    <div class="post-wrap-inner">
+		  <div class='post-header normal'>
+            <div class='post-title-wrap'>
+		      <h1 class='entry-title'>Meal Info:</h1>
+	        </div>
+		  </div>
+		  <div class="left entry-content">
+		    <table>
+              <tr>
+                <th width="100px">Name</th>
+                <th width="200px">Email</th>
+                <th width="100px">Phone</th>
+                <th width="400px">Description</th>
+              </tr>
+
+            <% @meals.each do |meal| %>
+              <tr>
+                <td><%=h meal.name %></td>
+                <td><%=h meal.email %></td>
+                <td><%=h meal.phone %></td>
+                <td><%=h meal.description %></td>
+                <td><%= link_to 'Show', meal %></td>
+              </tr>
+            <% end %>
+            </table>
+          </div><!-- .entry content -->
+        </div><!-- .post-wrap-inner -->
+	    <div class="post-footer"></div>
+	  </div><!-- .post-wrap -->
+    </div><!-- #post-2-->
+  </td>
+</tr>
+</table>

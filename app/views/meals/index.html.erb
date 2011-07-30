@@ -1,0 +1,53 @@
+<% content_for :body_class, 'has-sidebar' %>
+<% content_for :content_class, 'table-wrap' %>
+<table id='content-table'>
+<tr>
+  <td id='content-td-big'>
+    <div id="post-2" class="post-2 page hentry category-uncategorized self-clear">
+	  <div class="post-wrap self-clear content-bg">
+	    <div class="post-wrap-inner">
+		  <div class='post-header normal'>
+            <div class='post-title-wrap'>
+		      <h1 class='entry-title'>Please give us some information about any dietary necessities</h1>
+	        </div>
+		  </div>
+		  <div class="left entry-content">
+		    <% form_for(@meal) do |f| %>
+              <% if f.error_messages %>
+                <div style="color:red">Please Fill out all of the fields!</div>
+              <% end %>
+
+              <p>
+                <%= f.label :name %><br />
+                <%= f.text_field :name %>
+              </p>
+              <p>
+                <%= f.label :email %><br />
+                <%= f.text_field :email %>
+              </p>
+              <p>
+                <%= f.label :phone %><br />
+                <%= f.text_field :phone %>
+              </p>
+              <p>
+                <%= f.label :description %><br />
+                <%= f.text_area :description %>
+              </p>
+              <p>
+                <%= f.submit 'Submit' %>
+              </p>
+            <% end %>
+          </div><!-- .entry content -->
+        </div><!-- .post-wrap-inner -->
+	    <div class="post-footer"></div>
+	  </div><!-- .post-wrap -->
+    </div><!-- #post-2-->
+  </td>
+</tr>
+</table>
+
+
+
+
+<h1></h1>
+
