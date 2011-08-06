@@ -1849,3 +1849,17 @@ input#openid_url {
 .hotel-image {
     margin-bottom:2px !important;
 }
+
+.clear {
+    clear: both;
+}
+
+.wedding-party p {
+    margin-top: -5px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.wedding-party .left, .wedding-party .right {
+    margin-bottom: 35px;
+}
