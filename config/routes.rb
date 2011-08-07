@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :meals
+  map.resources :meals, :as => :menu
 
 
   map.resources :posts do |entry|
@@ -25,6 +25,7 @@ ActionController::Routing::Routes.draw do |map|
   map.visualize 'visualize', :controller => 'visualize', :action => 'index'
   map.results 'meals/25632563/results', :controller => 'meals', :action => 'results'
   map.results 'meals/thank_you', :controller => 'meals', :action => 'show'
+  map.results 'menu/thank_you', :controller => 'meals', :action => 'show'
 
   map.open_id_complete 'session', :controller => "session", :action => "create", :requirements => { :method => :get }
 
